@@ -1,3 +1,4 @@
+import getRandom from "./helpers/getRandom.js";
 
 const main = document.getElementById('main');
 const sections = document.querySelectorAll('.sections');
