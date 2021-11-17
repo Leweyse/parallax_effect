@@ -21,7 +21,7 @@ window.addEventListener('wheel', function (event) {
     position.y = position.y + (deltabs * 10);
 
     clouds.forEach((cloud, idx) => {
-        cloud.style.setProperty('transform', "translate(" + Math.round(position.y) * ((idx % (clouds.length / 2)) + 1) + "px," + position.x + "px)")
+        cloud.style.setProperty('transform', "translate(" + Math.round(position.y) * ((idx % (clouds.length / 15)) + 1) + "px," + position.x + "px)")
     });
 
     sections.forEach((section) => {
