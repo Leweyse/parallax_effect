@@ -6,6 +6,7 @@ main {
 
     grid-template-columns: repeat(2, 1fr);
 
-    background: url('../../assets/bg.jpg');
+    background: url('../assets/bg.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
 }
