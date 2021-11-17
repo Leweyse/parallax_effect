@@ -1,0 +1,11 @@
+main {
+    position: relative;
+    display: grid;
+    width: 200%;
+    height: 100%;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    background: url('../../assets/bg.jpg');
+    background-size: cover;
+}
