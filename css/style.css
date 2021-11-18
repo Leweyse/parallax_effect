@@ -24,9 +24,7 @@ main {
   width: 600%;
   height: 100%;
   grid-auto-flow: column;
-  background: url("../assets/bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: black;
 }
 
 aside {
@@ -82,56 +80,56 @@ img {
   top: 5px;
 }
 #clouds .cloud:nth-child(1) {
-  right: 2.75%;
+  left: 14.75%;
   z-index: 1;
 }
 #clouds .cloud:nth-child(2) {
   top: -16px;
 }
 #clouds .cloud:nth-child(2) {
-  right: 5.5%;
+  left: 29.5%;
   z-index: 2;
 }
 #clouds .cloud:nth-child(3) {
   top: 15px;
 }
 #clouds .cloud:nth-child(3) {
-  right: 8.25%;
+  left: 44.25%;
   z-index: 3;
 }
 #clouds .cloud:nth-child(4) {
   top: -32px;
 }
 #clouds .cloud:nth-child(4) {
-  right: 11%;
+  left: 59%;
   z-index: 4;
 }
 #clouds .cloud:nth-child(5) {
   top: 25px;
 }
 #clouds .cloud:nth-child(5) {
-  right: 13.75%;
+  left: 73.75%;
   z-index: 5;
 }
 #clouds .cloud:nth-child(6) {
   top: -48px;
 }
 #clouds .cloud:nth-child(6) {
-  right: 16.5%;
+  left: 88.5%;
   z-index: 6;
 }
 #clouds .cloud:nth-child(7) {
   top: 35px;
 }
 #clouds .cloud:nth-child(7) {
-  right: 19.25%;
+  left: 103.25%;
   z-index: 7;
 }
 #clouds .cloud:nth-child(8) {
   top: -64px;
 }
 #clouds .cloud:nth-child(8) {
-  right: 0%;
+  left: 118%;
   z-index: 8;
 }
 
