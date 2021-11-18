@@ -1,0 +1,8 @@
+@use '../abstracts' as *;
+
+h1 {
+    position: relative;
+    color: $clr-text;
+    font-family: $ff-title;
+    font-size: 8rem;
+}

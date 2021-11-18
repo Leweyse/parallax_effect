@@ -4,31 +4,29 @@
     position: absolute;
 
     .cloud {
-        position: relative;
+        position: absolute;
+        min-width: 20%;
+        height: 30%;
 
         transform: translate(0, 0);
 
-        @for $i from 0 through 8 {
+        @for $i from 1 through 8 {
             @if $i % 2 == 0 {
                 &:nth-child(#{$i}) {
-                    top: #{$i * (-1) * 5}px;
+                    top: #{$i * (-1) * 8}px;
                 }
             } @else {
                 &:nth-child(#{$i}) {
-                    top: #{$i * 8}px;
+                    top: #{$i * 5}px;
                 }
             }
 
             &:nth-child(#{$i}) {
-                left: #{((($i % 9) + 1) * 100% / 10.5) - 15};
+                right: #{(($i % 8) * 2.75%)};
                 z-index: #{$i};
             }
         }
 
         transition: transform 0.25s ease-out;
-
-        img {
-            width: 25%;
-        }
     }
 }

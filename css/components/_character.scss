@@ -1,0 +1,18 @@
+#character {
+    z-index: 1111;
+
+    h1 {
+        left: 50%;
+        position: absolute;
+
+        transform: translateX(-50%);
+        transition: opacity 250ms ease-in;
+    }
+
+    img {
+        width: 10%;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 0)
+    }
+}
