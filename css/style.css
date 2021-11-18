@@ -55,17 +55,19 @@ img {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   place-items: center;
-  z-index: 1111;
 }
 #character h1 {
   position: absolute;
-  top: 0;
+  margin-top: -25%;
   transition: opacity 250ms ease-out;
+  cursor: url(../assets/cursor.png) 48 48, auto;
+  z-index: 2;
 }
 #character img {
   width: 10%;
   bottom: 0;
   transition: opacity 50ms ease-in;
+  z-index: 2;
 }
 
 #clouds {
@@ -174,6 +176,31 @@ img {
   bottom: 0;
   min-width: 100%;
   height: 100%;
+}
+
+#section_2 {
+  background: #F9C22E;
+  cursor: none;
+}
+#section_2 .cursor {
+  position: absolute;
+  color: #F15946;
+  letter-spacing: 5px;
+  font-weight: 600;
+  font-family: "Bebas Neue", serif;
+  font-size: 2.5rem;
+  z-index: 2;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+#section_2 img {
+  opacity: 0.6;
+}
+
+#section_3 {
+  background: #68A691;
+}
+#section_3 img {
+  opacity: 0.9;
 }
 
 @media (max-width: 1000px) {

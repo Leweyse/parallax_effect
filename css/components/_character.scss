@@ -5,13 +5,14 @@
 
     place-items: center;
 
-    z-index: 1111;
-
     h1 {
         position: absolute;
-        top: 0;
+        margin-top: -25%;
 
         transition: opacity 250ms ease-out;
+
+        cursor: url(../assets/cursor.png) 48 48, auto;
+        z-index: 2;
     }
 
     img {
@@ -19,5 +20,7 @@
         bottom: 0;
 
         transition: opacity 50ms ease-in;
+
+        z-index: 2;
     }
 }
