@@ -1,18 +1,23 @@
 #character {
+    display: grid;
+
+    grid-template-rows: repeat(2, 1fr);
+
+    place-items: center;
+
     z-index: 1111;
 
     h1 {
-        left: 50%;
         position: absolute;
+        top: 0;
 
-        transform: translateX(-50%);
         transition: opacity 250ms ease-out;
     }
 
     img {
         width: 10%;
-        left: 50%;
         bottom: 0;
-        transform: translate(-50%, 0)
+
+        transition: opacity 50ms ease-in;
     }
 }

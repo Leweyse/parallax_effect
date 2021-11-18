@@ -40,7 +40,7 @@ window.addEventListener('wheel', function (event) {
     if (event.deltaMode > 1) return false;
 
     if (xEventValue === -1) running.style.transform = 'scaleX(-1)';
-    else running.style.transform = 'scaleX(1)';
+    else running.style.transform = 'none';
 
     position.x = position.x + (xEventValue * 10);
 
