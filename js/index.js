@@ -1,11 +1,9 @@
 import getRandom from "./helpers/getRandom.js";
 
-const main = document.getElementById('main');
-const sections = document.querySelectorAll('.sections');
 const instruction = document.querySelector('#character h1');
+const sections = document.querySelectorAll('.sections');
 
-const arr = [...document.querySelectorAll('.cloud')];
-const clouds = getRandom(arr, arr.length);
+const clouds = [...document.querySelectorAll('.cloud')];
 
 const standing = document.getElementById('standing');
 const running = document.getElementById('running');

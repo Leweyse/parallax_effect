@@ -10,7 +10,7 @@
 
         transform: translate(0, 0);
 
-        @for $i from 1 through 8 {
+        @for $i from 1 through 12 {
             @if $i % 2 == 0 {
                 &:nth-child(#{$i}) {
                     top: #{$i * (-1) * 8}px;
@@ -22,7 +22,7 @@
             }
 
             &:nth-child(#{$i}) {
-                left: #{($i * 14.75%)};
+                left: #{($i + 10 * 8%)};
                 z-index: #{$i};
             }
         }
