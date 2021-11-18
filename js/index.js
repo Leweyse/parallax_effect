@@ -2,7 +2,7 @@ import getRandom from "./helpers/getRandom.js";
 
 const main = document.getElementById('main');
 const sections = document.querySelectorAll('.sections');
-const arr = [...document.getElementsByClassName('cloud')];
+const instruction = document.querySelector('#character h1');
 
 const arr = [...document.querySelectorAll('.cloud')];
 const clouds = getRandom(arr, arr.length);
@@ -15,9 +15,28 @@ let position = {
     y: 0
 }
 
+let movement = ['running'];
+
+window.addEventListener('keydown', function() {
+    instruction.style.opacity = 1;
+})
+
 window.addEventListener('wheel', function (event) {
-    let deltabs = 1;
-    if (event.deltaY < 0) deltabs = -1;
+    movement = [];
+
+    instruction.style.opacity = 0;
+
+    if (event.deltaX !== 0) {
+        instruction.style.opacity = 1;
+        movement = ['running'];
+        return;
+    }
+
+    let xEventValue = -1;
+    if (event.deltaY < 0) {
+        xEventValue = 1
+        instruction.style.opacity = 1;
+    }
 
     // Disable page scrolling, modes[event.deltaMode]=='page'
     if (event.deltaMode > 1) return false;
