@@ -42,8 +42,9 @@ section {
 h1 {
   position: relative;
   color: #F15946;
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", serif;
   font-size: 8rem;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 img {
