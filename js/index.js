@@ -125,10 +125,11 @@ section_3.addEventListener('mousemove', function (event) {
 
     if (shakeNum % 25 === 0) {
         section_3.appendChild(block());
+        setTimeout(() => {
+            section_3.removeChild(document.querySelector('.block'));
+        }, 5000);
     }
 });
-
-let blocksArr = document.querySelectorAll('block');
 
 const render = () => {
     if (movement.length === 1) {
@@ -137,6 +138,10 @@ const render = () => {
     } else {
         standing.style.setProperty('opacity', '0')
         running.style.setProperty('opacity', '1')
+    }
+
+    if (destruction.length === 1) {
+        destruction.innerHTML = "";
     }
 
     movement = ['running'];
