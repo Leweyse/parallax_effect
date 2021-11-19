@@ -1,9 +1,9 @@
-function block() {
+function block(parent) {
     const img = document.createElement('img');
     img.setAttribute('src', './assets/block.webp');
     img.classList.add('block');
 
-    img.style.top = `-${Math.floor((Math.random() + 0.3) * 100)}%`;
+    img.style.top = `-${parent.offsetHeight}%`;
     img.style.left = `${Math.floor(Math.random() * 100)}%`;
     img.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
 

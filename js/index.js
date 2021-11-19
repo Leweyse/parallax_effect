@@ -124,7 +124,7 @@ section_3.addEventListener('mousemove', function (event) {
     }, 250);
 
     if (shakeNum % 25 === 0) {
-        section_3.appendChild(block());
+        section_3.appendChild(block(section_3));
         setTimeout(() => {
             section_3.removeChild(document.querySelector('.block'));
         }, 5000);

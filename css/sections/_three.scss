@@ -13,16 +13,11 @@
 
     .block {
         position: absolute;
-        min-width: 100px;
-        height: 100px;
+        min-width: 10%;
+        height: 20%;
+
+        pointer-events: none;
 
         transition: top 2s ease;
-    }
-}
-
-@keyframes blockAnimation {
-    to {
-        display: none;
-        top: 100%;
     }
 }

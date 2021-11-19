@@ -52,16 +52,16 @@ img {
 }
 
 .sections {
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
+  display: grid;
+  min-width: 100%;
+  place-items: center;
   transition: transform 0.25s ease-out;
 }
 .sections img {
   position: absolute;
   bottom: 0;
-  min-width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #character {
@@ -185,6 +185,8 @@ img {
 }
 #section_2 .cursor {
   position: absolute;
+  top: 0;
+  left: 0;
   color: #F15946;
   letter-spacing: 5px;
   font-weight: 600;
@@ -207,24 +209,12 @@ img {
 }
 #section_3 .block {
   position: absolute;
-  min-width: 100px;
-  height: 100px;
+  min-width: 10%;
+  height: 20%;
+  pointer-events: none;
   transition: top 2s ease;
 }
 
-@-webkit-keyframes blockAnimation {
-  to {
-    display: none;
-    top: 100%;
-  }
-}
-
-@keyframes blockAnimation {
-  to {
-    display: none;
-    top: 100%;
-  }
-}
 @media (max-width: 1000px) {
   #character img {
     width: 30%;
