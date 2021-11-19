@@ -7,11 +7,11 @@
 
     h1 {
         position: absolute;
-        margin-top: -25%;
-
-        transition: opacity 250ms ease-out;
 
         cursor: url(../assets/cursor.png) 48 48, auto;
+
+        transform: translateY(-10rem);
+        transition: transform 250ms ease, color 250ms ease;
         z-index: 2;
     }
 
@@ -21,6 +21,7 @@
 
         transition: opacity 50ms ease-in;
 
+        cursor: none;
         z-index: 2;
     }
 }

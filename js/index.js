@@ -1,6 +1,9 @@
+import block from "./components/block.component.js";
+
 let tl = gsap.timeline();
 
 const sections = document.querySelectorAll('.sections');
+const images = document.querySelectorAll('.section_bg');
 const clouds = [...document.querySelectorAll('.cloud')];
 
 const instruction = document.querySelector('#character h1');
@@ -9,8 +12,19 @@ const running = document.getElementById('running');
 
 const cursor = document.querySelector('.cursor');
 
+const section_2 = sections[1];
+const s2_bg = images[1];
+
+const section_3 = sections[2];
+const s3_bg = images[2];
+
+const section_4 = sections[3];
+const s4_bg = images[4];
+
+// Original position
+const instructionOP = '-10rem';
 const nearTen = (Math.round(sections[0].offsetWidth / 10) * 10);
-const colors = ['#F15946', '#694F5D', '#F15946', '#F9C22E', '#68A691']
+const colors = ['#F15946', '#68A691', '#F15946', '#F9C22E', '#68A691']
 
 let position = {
     x: 0,
@@ -20,24 +34,24 @@ let position = {
 let movement = ['running'];
 
 document.addEventListener('keydown', function() {
-    instruction.style.opacity = 1;
+    instruction.style.transform = `translateY(${instructionOP})`;
 })
 
 document.addEventListener('wheel', function (event) {
     movement = [];
 
-    instruction.style.opacity = 0;    
+    instruction.style.transform = `translateY(-${nearTen / 2}px)`;
 
     if (event.deltaX !== 0) {
-        instruction.style.opacity = 1;
+        instruction.style.transform = `translateY(${instructionOP})`;
         movement = ['running'];
         return;
     }
 
     let xEventValue = -1;
     if (event.deltaY < 0) {
-        xEventValue = 1
-        instruction.style.opacity = 1;
+        xEventValue = 1;
+        instruction.style.transform = `translateY(${instructionOP})`;
     }
 
     // Disable page scrolling, modes[event.deltaMode]=='page'
@@ -49,11 +63,11 @@ document.addEventListener('wheel', function (event) {
     position.x = position.x + (xEventValue * 10);
 
     clouds.forEach((cloud, idx) => {
-        cloud.style.setProperty('transform', "translate(" + Math.round(position.x) * (idx % (clouds.length / 10)) + "px," + 0 + "px)")
+        cloud.style.setProperty('transform', "translate(" + Math.round(position.x + 5) * (idx % (clouds.length / 10)) + "px," + 0 + "px)")
     });
 
     sections.forEach((section) => {
-        section.style.setProperty('transform', "translate(" + Math.round(position.x) + "px," + 0 + "px)")
+        section.style.setProperty('transform', "translate(" + Math.round(position.x + 5) + "px," + 0 + "px)")
     })
 
     if (Math.abs(position.x) % nearTen === 0) {
@@ -70,7 +84,7 @@ tl.set(cursor, {
   yPercent: 5
 });
 
-sections[1].addEventListener('mousemove', (event) => {
+section_2.addEventListener('mousemove', (event) => {
     cursor.innerHTML = "Welcome";
     
     gsap.to(cursor, {
@@ -80,6 +94,41 @@ sections[1].addEventListener('mousemove', (event) => {
         y: event.clientY
     })
 })
+
+let interval = null;
+let shakeNum = 1;
+let destruction = ['stopped'];
+
+section_3.addEventListener('mousemove', function (event) {
+    destruction = [];
+    shakeNum += 1;
+
+    clearTimeout(interval);
+    
+    const { clientX: x, clientY: y } = event;
+    const { offsetWidth: width, offsetHeight: height } = this;
+
+    let zeroX = width / 2;
+    let zeroY = height / 2;
+
+    let bsX = (zeroX - x) * 1.25;
+    let bsY = (zeroY - y) * 1.25;
+    
+    let rX = bsX - (bsX * 0.1);
+    let rY = bsY - (bsY * 0.1);;
+
+    s3_bg.style.setProperty('transform', `translate(${-1 * bsX}px, ${-1 * bsY}px)`);
+
+    interval = setTimeout(() =>{ 
+        s3_bg.style.setProperty('transform', `translate(${-1 * rX}px, ${-1 * rY}px)`);
+    }, 250);
+
+    if (shakeNum % 25 === 0) {
+        section_3.appendChild(block());
+    }
+});
+
+let blocksArr = document.querySelectorAll('block');
 
 const render = () => {
     if (movement.length === 1) {
@@ -91,6 +140,7 @@ const render = () => {
     }
 
     movement = ['running'];
+    destruction = ['stopped'];
 
     setTimeout(() => {
         render();
