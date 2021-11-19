@@ -7,6 +7,7 @@ const images = document.querySelectorAll('.section_bg');
 const clouds = [...document.querySelectorAll('.cloud')];
 
 const instruction = document.querySelector('#character h1');
+const sign = document.querySelector('#section_3 .sign');
 const standing = document.getElementById('standing');
 const running = document.getElementById('running');
 
@@ -32,10 +33,6 @@ let position = {
 }
 
 let movement = ['running'];
-
-document.addEventListener('keydown', function() {
-    instruction.style.transform = `translateY(${instructionOP})`;
-})
 
 document.addEventListener('wheel', function (event) {
     movement = [];
@@ -111,23 +108,16 @@ section_3.addEventListener('mousemove', function (event) {
     let zeroX = width / 2;
     let zeroY = height / 2;
 
-    let bsX = (zeroX - x) * 1.25;
-    let bsY = (zeroY - y) * 1.25;
-    
-    let rX = bsX - (bsX * 0.1);
-    let rY = bsY - (bsY * 0.1);;
+    let bsX = (zeroX - x);
+    let bsY = (zeroY - y);
 
     s3_bg.style.setProperty('transform', `translate(${-1 * bsX}px, ${-1 * bsY}px)`);
-
-    interval = setTimeout(() =>{ 
-        s3_bg.style.setProperty('transform', `translate(${-1 * rX}px, ${-1 * rY}px)`);
-    }, 250);
 
     if (shakeNum % 25 === 0) {
         section_3.appendChild(block(section_3));
         setTimeout(() => {
             section_3.removeChild(document.querySelector('.block'));
-        }, 5000);
+        }, 3000);
     }
 });
 
@@ -140,9 +130,8 @@ const render = () => {
         running.style.setProperty('opacity', '1')
     }
 
-    if (destruction.length === 1) {
-        destruction.innerHTML = "";
-    }
+    if (destruction.length !== 1) sign.innerHTML="But don't destroy my house";
+    else sign.innerHTML="Move your cursor faster";
 
     movement = ['running'];
     destruction = ['stopped'];

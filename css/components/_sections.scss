@@ -3,6 +3,7 @@
     min-width: 100%;
 
     place-items: center;
+    will-change: transform;
     transition: transform 0.25s ease-out;
 
     img {

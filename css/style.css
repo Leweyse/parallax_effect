@@ -55,6 +55,7 @@ img {
   display: grid;
   min-width: 100%;
   place-items: center;
+  will-change: transform;
   transition: transform 0.25s ease-out;
 }
 .sections img {
@@ -201,6 +202,18 @@ img {
 
 #section_3 {
   background: #68A691;
+}
+#section_3 .sign {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  color: #F9C22E;
+  letter-spacing: 5px;
+  font-weight: 600;
+  font-family: "Bebas Neue", serif;
+  font-size: 3.5rem;
+  z-index: 2;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 #section_3 .section_bg {
   opacity: 0.9;
